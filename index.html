@@ -8,29 +8,35 @@
     <script src="https://kit.fontawesome.com/dcb11a4e03.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Encriptador</title>
 </head>
 <body>
-    <div class="input-text">
-        <label for="text">Digite seu texto</label>
-        <textarea name="text" id="text" cols="100" rows="20"></textarea>
-        
-        <div class="alert">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <p>Apenas letras minúsculas e sem acento.</p>
-        </div>
-        
-        <div class="buttons">
-            <button>Criptografar</button>
-            <button> Descriptografar</button>
-        </div>
-    </div>
+    <header>
+        <h1>Encriptador</h1>
+    </header>
 
-    <div class="decode">
-        <img src="./images/research.png" alt="research-icon">
-
-        <h2>Nenhuma mensagem encontrada</h2>
-        <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
-    </div>
+    <main>
+        <section class="input-text">
+            <label for="text">Digite seu texto</label>
+            <textarea name="text" id="text" cols="100" rows="20"></textarea>
+            
+            <div class="alert">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>Apenas letras minúsculas e sem acento.</p>
+            </div>
+            
+            <div class="buttons">
+                <button>Criptografar</button>
+                <button> Descriptografar</button>
+            </div>
+        </section>
+    
+        <section class="decode">
+            <img src="./images/research.png" alt="research-icon">
+    
+            <h2>Nenhuma mensagem encontrada</h2>
+            <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+        </section>
+    </main>
 </body>
 </html>
