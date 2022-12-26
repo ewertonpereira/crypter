@@ -6,12 +6,14 @@ body {
 header {
     background: #183153;
     height: 80px;
+    min-width: 380px;
 }
 
 h1 {
     position: relative;
     transform: translateY(20%);
     width: 20%;
+    min-width: 220px;
     font-weight: bold;
     font-size: 2em;
     text-align: center;
@@ -24,6 +26,7 @@ h1 {
 
 main {
     display: flex;
+    min-width: 380px;
 }
 
 img {
@@ -31,6 +34,7 @@ img {
 }
 
 .input-text  {
+    position: relative;
     display: block;
     margin: 50px;
     width: 70%;
@@ -56,6 +60,8 @@ img {
 }  */
 
 .input-text textarea {
+    display: block;
+    
     width: 99.5%;
     border: none;
     outline: 0;
@@ -92,6 +98,7 @@ img {
 
 .buttons button {
     width: 250px;
+    min-width: 170px;
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
@@ -109,9 +116,9 @@ img {
     color: #183153;
 }
 
-.decode {
+.decoding-text {
     background: #183153;
-    background-image: -webkit-linear-gradient(146deg, #001c40  50%, #183153 50%);
+    /* background-image: -webkit-linear-gradient(146deg, #001c40  50%, #183153 50%); */
     padding: 2% 0;
     text-align: center;
     width: 30%;
@@ -120,19 +127,67 @@ img {
     border-radius: 15px;
 }
 
-.decode img {
+.decoding-text img {
     padding-top: 25%;
 }
 
-.decode h2 {
+.decoding-text h2 {
     font-size: 25px;
     font-weight: bold;
     padding: 8% 2%;
     color: rgb(245, 242, 242);
 }
 
-.decode p {
+.decoding-text p {
     font-size: 14px;
     padding: 5%;
     color: rgb(245, 242, 242);
+}
+
+@media screen and (max-width: 900px) {
+
+    main {
+        display: block;
+    }
+    .input-text, .decoding-text {
+        width: auto;
+        text-align: center;
+    }
+
+    .buttons button {
+        margin: 10px;
+        width: 50%;
+    }
+    .buttons button:last-child {
+        margin-right: 3%;
+    }
+
+    .decoding-text {
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width:  380px) {
+
+    main {
+        display: block;
+    }
+    .input-text, .decoding-text {
+        width: auto;
+        text-align: center;
+    }
+
+    .buttons button {
+        margin: 10px;
+        width: 50%;
+    }
+    .buttons button:last-child {
+        margin-right: 3%;
+    }
+
+    .decoding-text {
+        height: auto;
+    }
+
 }
