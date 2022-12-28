@@ -1,12 +1,12 @@
  const btn_encode = document.getElementById('btn-encode');
  const btn_decode = document.getElementById('btn-decode');
- const massage = document.getElementById('message');
- var clear = document.getElementById('clear').hidden=false;
-
- 
+ const message = document.getElementById('message');
+ const btn_copy = document.getElementById('btn-copy');
+ const btn_clear = document.getElementById('btn-clear');
  const text = document.getElementById('text');
  
- var newText = ''
+ var newText = '';
+ var phase = 'Digite um texto que você deseja criptografar ou descriptografar.';
 
  const encode = {
      'e': 'enter',
@@ -17,39 +17,49 @@
  };
 
  const decode = {
-     'enter': 'e',
+     'enter': 'e', 
      'imes': 'i',
      'ai': 'a',
      'ober': 'o',
      'ufat': 'u'
  };
 
+ btn_copy.hidden=true;
+ btn_clear.hidden=true;
 
+btn_encode.addEventListener('click', () => {
 
- btn_encode.addEventListener('click', () => {
-
-     newText = text.value.replace(/e|i|a|o|u/g, matched => encode[matched]);
-     message.textContent = newText;
-     message.style.fontSize = "2em";
-     document.getElementById('information').hidden=true;
-     if (text.value != '') {
-        clear.activade
-        clear.hidden=false;
-     } 
-     
+    newText = text.value.replace(/e|i|a|o|u/g, matched => encode[matched]);
+    message.textContent = newText;
+    message.style.fontSize = "2em";
+    document.getElementById('information').hidden=true;
+    document.getElementById('btn-copy').hidden=false;
+    document.getElementById('btn-clear').hidden=false;
     
-    //  console.log(text.value); 
-    //  console.log(newText); 
- });
+});
 
  btn_decode.addEventListener('click', () => {
      
      newText = text.value.replace(/enter|imes|ai|ober|ufat/g, matched => decode[matched]);
      message.textContent = newText;
-
-    //  console.log(text.value); 
-    //  console.log(newText); 
+     message.style.fontSize = "2em";
+     document.getElementById('information').hidden=true;
+     document.getElementById('btn-copy').hidden=false;
+     document.getElementById('btn-clear').hidden=false;
  });
+
+ btn_copy.addEventListener('click', () => {
+    navigator.clipboard.writeText(newText);
+ });
+
+ btn_clear.addEventListener('click', () => {
+    text.value = '';
+    document.getElementById('information').hidden=false;
+    document.getElementById('btn-copy').hidden=true;
+    document.getElementById('btn-clear').hidden=true;
+    message.textContent = phase;
+    message.style.fontSize = "14px";
+ })
 
  /* 
  
