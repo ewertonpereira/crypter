@@ -35,7 +35,10 @@ btn_encode.addEventListener('click', () => {
     document.getElementById('information').hidden=true;
     document.getElementById('btn-copy').hidden=false;
     document.getElementById('btn-clear').hidden=false;
-    
+    message.style.height='75%';
+    message.style.overflow='scroll';
+    message.style.borderRadius='10px';
+    message.style.boxShadow='-5px -7px 9px #fff inset, 5px 11px 17px -13px #000 inset';
 });
 
  btn_decode.addEventListener('click', () => {
@@ -46,6 +49,10 @@ btn_encode.addEventListener('click', () => {
      document.getElementById('information').hidden=true;
      document.getElementById('btn-copy').hidden=false;
      document.getElementById('btn-clear').hidden=false;
+     message.style.height='75%';
+     message.style.overflow='scroll';
+     message.style.borderRadius='10px';
+     message.style.boxShadow='-5px -7px 9px #fff inset, 5px 11px 17px -13px #000 inset';
  });
 
  btn_copy.addEventListener('click', () => {
@@ -59,6 +66,10 @@ btn_encode.addEventListener('click', () => {
     document.getElementById('btn-clear').hidden=true;
     message.textContent = phase;
     message.style.fontSize = "14px";
+    message.style.height='0';
+    message.style.overflow='hidden';
+    message.style.borderRadius='none';
+    message.style.boxShadow='none';
  })
 
  /* 
